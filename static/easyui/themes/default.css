@@ -1,0 +1,58 @@
+﻿*{font-size:13px; font-family:Tahoma,Verdana,微软雅黑,新宋体}
+body{background:#D2E0F2; }
+a{ color:Black; text-decoration:none;}
+a:hover{ color:Red; text-decoration:underline;}
+.textbox03 {border: #878787 1px solid;padding: 4px 3px;font:Verdana, Geneva, sans-serif,宋体;line-height: 14px; background-color: #fff;  height: auto; font-size: 14px;  font-weight: bold; width: 190px; }
+
+.txt01{font:Verdana, Geneva, sans-serif,宋体;padding:3px 2px 2px 2px; border-width:1px; border-color:#ddd;  color:#000;}
+.txt {border: #878787 1px solid;padding: 4px 3px;font:Verdana, Geneva, sans-serif,宋体;line-height: 14px; background-color: #fff;  height: auto; font-size: 14px;}
+.footer{text-align:center;color:#15428B; margin:0px; padding:0px;line-height:23px; font-weight:bold;}
+
+.head a{color:White;text-decoration:underline;}
+
+.navlist{list-style-type:none;margin:0px; padding:10px;}
+.navlist li{ padding:0px;}
+.navlist li a{line-height:24px;}
+.navlist li div{margin:2px 0px;padding-left:10px;padding-top:2px; }
+.navlist li div.hover{ background:#E0ECFF;cursor:pointer;}
+.navlist li div.hover a{color:#416AA3;}
+.navlist li div.selected{ background:#E0ECFF;cursor:default;}
+.navlist li div.selected a{color:#416AA3; font-weight:bold;}
+
+
+.third_ul{ list-style-type:none;margin:0px; padding:0px; display:none;}
+.third_ul li{ padding-left:20px;}
+
+.icon{width:20px; line-height:20px;display:inline-block;}
+.panel-icon{left:2px;}
+
+
+.icon-tool{ background:url('../images/icons/tool.png') no-repeat;background-size:18px 20px;}
+.icon-sys{ background:url('../images/icons/sys.png') no-repeat;background-size:18px 20px;}
+.icon-table{ background:url('../images/icons/table.png') no-repeat;background-size:18px 20px;}
+.icon-danmu{ background:url('../images/icons/danmu.png') no-repeat;background-size:18px 20px;}
+.icon-money{ background:url('../images/icons/money.png') no-repeat;background-size:18px 20px;}
+.icon-piao{ background:url('../images/icons/piao.png') no-repeat;background-size:18px 20px;}
+.icon-cate{ background:url('../images/icons/cate.png') no-repeat;background-size:18px 20px;}
+.icon-name{ background:url('../images/icons/name.png') no-repeat;background-size:18px 20px;}
+.icon-book{ background:url('../images/icons/book.png') no-repeat;background-size:18px 20px;}
+.icon-jsq{ background:url('../images/icons/jsq.png') no-repeat;background-size:18px 20px;}
+.icon-fl{ background:url('../images/icons/fl.png') no-repeat;background-size:18px 20px;}
+.icon-data{ background:url('../images/icons/data.png') no-repeat;background-size:18px 20px;}
+.icon-all{ background:url('../images/icons/all.png') no-repeat;background-size:18px 20px;}
+.icon-qumo{ background:url('../images/icons/qumo.png') no-repeat;background-size:18px 20px;}
+.icon-jisuan{ background:url('../images/icons/jisuan.png') no-repeat;background-size:18px 20px;}
+.icon-searchcate{ background:url('../images/icons/search.png') no-repeat;background-size:18px 20px;}
+.icon-propbag{ background:url('../images/icons/bag.png') no-repeat;background-size:18px 20px;}
+.icon-people{ background:url('../images/icons/people.png') no-repeat;background-size:18px 20px;}
+.icon-user{ background:url('../images/icons/user.png') no-repeat;background-size:18px 20px;}
+.icon-fishball{ background:url('../images/icons/fishball.png') no-repeat;background-size:18px 20px;}
+.icon-error{ background:url('../images/icons/error.png') no-repeat;background-size:18px 20px;}
+.icon-bigdata{ background:url('../images/icons/bigdata.png') no-repeat;background-size:18px 20px;}
+.icon-clear{ background:url('../images/icons/clear.png') no-repeat;background-size:18px 20px;}
+.icon-baoxiang{ background:url('../images/icons/baoxiang.png') no-repeat;background-size:18px 20px;}
+.icon-task{ background:url('../images/icons/task.png') no-repeat;background-size:18px 20px;}
+.icon-broadcast{ background:url('../images/icons/broadcast.png') no-repeat;background-size:18px 20px;}
+.icon-gift{ background:url('../images/icons/gift.png') no-repeat;background-size:18px 20px;}
+.icon-statistics{ background:url('../images/icons/statistics.png') no-repeat;background-size:18px 20px;}
+.icon-chat{ background:url('../images/icons/chat.png') no-repeat;background-size:18px 20px;}
