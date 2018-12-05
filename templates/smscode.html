@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>EasyUI Tab</title>
+
+<script src="{{url_for('static', filename='easyui/jquery.min.js')}}"></script>
+<script src="{{url_for('static', filename='easyui/jquery.easyui.min.js')}}"></script>
+<script src="{{url_for('static', filename='easyui/locale/easyui-lang-zh_CN.js')}}"></script>
+
+<link rel=stylesheet href="{{ url_for('static', filename='easyui/themes/bootstrap/easyui.css') }}">
+<link rel=stylesheet href="{{ url_for('static', filename='easyui/themes/icon.css') }}">
+
+</head> 
+<body>
+	<div data-options="region:'center',title:'内容'">
+		<div id="smscode" style="padding:10px;">
+			<div id="p1" class="easyui-panel" title="查询验证码" style="height:650px;width:1630px;">
+				<div style="width:800px;float:left">
+					<ul>
+						<li>
+							<span>手机号：</span><input id="uValue" value="" class="easyui-textbox" data-options="prompt:'填写用户手机号',validType:'length[1,20]'">
+							<a href="#" id="button" class="easyui-linkbutton" iconCls="icon-ok" style="height:22pxwidth:10%;margin-left:15px;">查询</a>
+                            <span style="font-style:italic;padding-left:10px;color:#778899">注：注册用户，需点击请求发送验证码，才能获取.</span>
+						</li>
+					</ul>
+					<br/>
+					<ul>
+						<li>
+							<div style="width:600px;height:180px;border:1px dashed #8085e9;float:left;margin-right:38px;">
+								<span id="result" style="font-size:14px;color:red">操作结果:</span>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+<script>
+	var system_ip='';
+	$(document).ready(function(){
+		var ip_addr = document.location.hostname;
+		system_ip='http://'+ip_addr+":8080/";
+		innerHtmlStr = $("#result")
+	});
+	
+	$('#button').click(function () {
+		var uValue = $("#uValue").val();
+		doAjax_start(uValue);
+	});
+
+	function doAjax_start(uValue) {
+		var _url = system_ip + "getCode";
+		var _jsonStr = {
+			"phone": uValue,
+		};
+		$.ajax({
+			type: 'POST',
+			url: _url,
+			data: JSON.stringify(_jsonStr),
+			contentType: 'application/json; charset=UTF-8',
+			dataType: 'json',
+
+			success: function (data) {
+				msg = eval(data)
+				if (msg.code == 0) {
+					innerHtmlStr.empty();
+					innerHtmlStr.append('执行结果为:' + msg.msg);
+				} else {
+					$.messager.alert('提示', "Code:" + msg.code + ",请求失败，" + msg.msg);
+				}
+			},
+			error: function (XMLHttpRequest, textStatus, errorThrown) {
+				$.messager.alert('提示', "Code:" + XMLHttpRequest.readyState + ",请求失败，异常状态.");
+			}
+		});
+	};
+</script>
+</html>

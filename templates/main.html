@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Flask EasyUI</title>
+<!-- 载入EasyUI -->
+<script src="{{url_for('static', filename='easyui/jquery.min.js')}}"></script>
+<script src="{{url_for('static', filename='easyui/menu.js')}}"></script>
+<script src="{{url_for('static', filename='easyui/jquery.easyui.min.js')}}"></script>
+<script src="{{url_for('static', filename='easyui/locale/easyui-lang-zh_CN.js')}}"></script>
+
+<link rel=stylesheet href="{{ url_for('static', filename='easyui/themes/bootstrap/easyui.css') }}">
+<link rel=stylesheet href="{{ url_for('static', filename='easyui/themes/icon.css') }}">
+<link rel=stylesheet href="{{ url_for('static', filename='easyui/themes/default.css') }}">
+
+</head> 
+<body>
+	<div class="easyui-layout" id="cc" style="width:1900px;height:900px;">
+		<div data-options="region:'north'" style="height:70px;"><h1  style="margin-left:20px;font-size:20px;">翻贝花测试平台</h1></div>
+		<div data-options="region:'south',split:true" style="height:50px;"></div>
+		<div data-options="region:'west',split:false,iconCls:'icon-reload'" title="功能菜单" style="width:200px;">
+			<div id="nav"></div>
+		</div>
+		<div id="mainPanle"  data-options="region:'center',title:'主页',iconCls:'icon-large-smartart'">
+			<div id="tabs" class="easyui-tabs"  fit="true" border="false" ></div>
+		</div>
+	</div>
+</body>
+<script type=text/javascript>
+	var system_ip='';
+	$(document).ready(function(){
+		var ip_addr = document.location.hostname;
+		system_ip='http://'+ip_addr+":8080/";
+	});
+
+	var _menus = {
+			"menus": [{
+				"menuid": "1",
+				"icon": "icon-ok",
+				"menuname": "商家模块",
+				"menus": [{
+					"menuid": "21",
+					"menuname": "商家注册",
+					"icon": "icon-add",
+					"url": "#"
+				},{
+					"menuid": "22",
+					"menuname": "商家实名",
+					"icon": "icon-add",
+					"url": "#"
+				},{
+					"menuid": "23",
+					"menuname": "商家绑卡",
+					"icon": "icon-add",
+					"url": "#",
+				},{
+					"menuid": "24",
+					"menuname": "商家开店",
+					"icon": "icon-add",
+					"url": "#"
+				}]
+			},{
+				"menuid": "2",
+				"icon": "icon-ok",
+				"menuname": "用户模块",
+				"menus": [{
+					"menuid": "10",
+					"menuname": "查询验证码",
+					"icon": "icon-add",
+					"url": system_ip+"smscode"
+					},{
+					"menuid": "11",
+					"menuname": "用户注册",
+					"icon": "icon-add",
+					"url":  system_ip+"create"
+					},{
+						"menuid": "12",
+						"menuname": "用户实名",
+						"icon": "icon-add",
+						"url": "#"
+					},{
+						"menuid": "13",
+						"menuname": "用户绑卡",
+						"icon": "icon-add",
+						"url": "#"
+					}]
+				}]
+		};
+
+</script>
+</html>

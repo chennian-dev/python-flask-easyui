@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>EasyUI Tab</title>
+
+<script src="{{url_for('static', filename='easyui/jquery.min.js')}}"></script>
+<script src="{{url_for('static', filename='easyui/jquery.easyui.min.js')}}"></script>
+<script src="{{url_for('static', filename='easyui/locale/easyui-lang-zh_CN.js')}}"></script>
+
+<link rel=stylesheet href="{{ url_for('static', filename='easyui/themes/bootstrap/easyui.css') }}">
+<link rel=stylesheet href="{{ url_for('static', filename='easyui/themes/icon.css') }}">
+
+<script type=text/javascript>
+var $SCRIPT_ROOT = {{request.script_root|tojson|safe}};
+</script>
+
+<script>
+$(document).ready(function() {
+        
+});
+</script>
+</head> 
+<body>
+<h2>Tab Test2</h2>
+<div id="content">
+    <p>I am Tab2</p>
+</div>
+</body> 
+</html>

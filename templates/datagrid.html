@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Flask EasyUI</title>
+<!-- 载入EasyUI -->
+<script src="{{url_for('static', filename='easyui/jquery.min.js')}}"></script>
+<script src="{{url_for('static', filename='easyui/jquery.easyui.min.js')}}"></script>
+<script src="{{url_for('static', filename='easyui/locale/easyui-lang-zh_CN.js')}}"></script>
+
+<link rel=stylesheet href="{{ url_for('static', filename='easyui/themes/bootstrap/easyui.css') }}">
+<link rel=stylesheet href="{{ url_for('static', filename='easyui/themes/icon.css') }}">
+
+<script type=text/javascript>
+var $SCRIPT_ROOT = {{request.script_root|tojson|safe}};
+</script>
+
+<script>
+$(document).ready(function(){
+    $('#dg').datagrid({
+        // url:'get_users.php',    // 载入资源，可使用其他方法
+        method: "GET",
+        pagination: true,       // 分页
+        rownumbers: true,       // 行号
+        fitColumns: true,       // 水平自适应
+        singleSelect: true,     // 单选
+        idField: 'id',
+        columns:[[
+            {field:'id',        title:'ID',      width:50},
+            {field:'firstname', title:'姓',      width:100},
+            {field:'lastname',  title:'名',      width:100},
+            {field:'phone',     title:'电话',     width:100},
+            {field:'email',     title:'邮箱',     width:100}
+        ]]
+});
+
+    data = {
+        "total": "3",
+        "rows": [{
+            "id": "11",
+            "firstname": "周",
+            "lastname": "星驰",
+            "phone": "(000)000-0011",
+            "email": "zhouxingqi@gmail.com"
+        }, {
+            "id": "12",
+            "firstname": "吴",
+            "lastname": "孟达",
+            "phone": "(000)000-0012",
+            "email": "wumenda@gmail.com"
+        }, {
+            "id": "13",
+            "firstname": "徐",
+            "lastname": "凯",
+            "phone": "(000)000-0013",
+            "email": "xukai19871105@126.com"
+        }]
+    };
+
+    // 异步载入数据
+    $('#dg').datagrid("loadData", data);
+        
+});
+
+</script>
+</head> 
+<body>
+    <div style="margin:0px auto;width:900px">
+        <h2>Datagrid示例</h2>
+        <table id="dg" style="width:700px;height:400px">
+        </table>
+    </div>
+</body> 
+</html>
